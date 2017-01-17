@@ -58,10 +58,10 @@ Article.fetchAll = function() {
     articleView.initIndexPage();
   } else {
     // TODO: When we don't already have the rawData,
-$.getJSON('data/hackerIpsum.json', function(data) {
-  localStorage.rawData = JSON.stringify(data);
-
-  }
-  });
+    $.getJSON('data/hackerIpsum.json', function(data) {
+      localStorage.rawData = JSON.stringify(data);
+      Article.loadAll(data);
+      articleView.initIndexPage();
+});
   }
 }
